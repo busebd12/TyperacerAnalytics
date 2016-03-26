@@ -1,7 +1,5 @@
 #include "TypingRace.h"
 
-TypingRace::TypingRace(const int RaceNumber, const int WordsPerMinute, const int Accuracy, const int FinishingPlace, const int TextID):raceNumber(RaceNumber), wordsPerMinute(WordsPerMinute), accuracy(Accuracy), finishingPlace(FinishingPlace), text_id(TextID) {}
-
 TypingRace::TypingRace() {}
 
 void TypingRace::setRaceNumber(const int RaceNumber)

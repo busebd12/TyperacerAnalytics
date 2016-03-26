@@ -14,7 +14,6 @@ class TypingRace
 		boost::gregorian::date raceDate;
 
 	public:
-		TypingRace(const int RaceNumber, const int WordsPerMinute, const int Accuracy, const int FinishingPlace, const int TextID);
 		TypingRace();
 		void setRaceNumber(const int RaceNumber);
 		void setWordsPerMinute(const int WordsPerMinute);
