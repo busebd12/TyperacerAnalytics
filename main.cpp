@@ -181,6 +181,7 @@ int main(int argc, char* argv [])
 		Years.insert(ds.year());
 	};
 
+	//lambda function to print the typing races
 	auto printRaces=[&] (const map<int, boost::gregorian::date> & Map) -> void
 	{
 		cout << "Races:" << endl;
@@ -202,11 +203,13 @@ int main(int argc, char* argv [])
 		cout << "The slowest WPM was: " << slowestWPM->first << endl;
 	};
 
+	//lambda function to print the years of the typing races
 	auto printYears=[&] (const set<boost::gregorian::greg_year> & Years) -> void
 	{
 		for_each(Years.begin(), Years.end(), [] (const auto & element) {cout << element << endl;});	
 	};
 
+	//lambda function that prints the average words per minutes by year
 	auto printAverageWPMByYear=[&] (const vector<pair<int, boost::gregorian::greg_year>> & FinalAverages)
 	{
 		cout << "Average WPM by year:" << endl;
@@ -288,7 +291,7 @@ int main(int argc, char* argv [])
 
 	cout << "Right before creating the threads" << endl;
 
-	
+	//create threads to find the fastest words per minute typed in their assigned part of the vector
 	for(int i=0;i<numberOfThreads;++i)
 	{
 		for(const auto & element : pairs)
@@ -299,6 +302,7 @@ int main(int argc, char* argv [])
 	
 
 	/*
+	//create threads to find the slowest words per minute typed in their assigned part of the vector
 	for(int i=0;i<numberOfThreads;++i)
 	{
 		for(const auto & element : pairs)
@@ -309,6 +313,7 @@ int main(int argc, char* argv [])
 	*/
 	
 	/*
+	//create threads to find the average words per minute typed by year in their assigned part of the vector
 	for(int x=0;x<numberOfThreads;++x)
 	{
 		for(const auto & year : years)
